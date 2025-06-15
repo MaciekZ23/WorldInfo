@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" routerLink="/">
+            <img src="assets/kula_ziemska.png" alt="Ziemia" width="45" height="45" class="me-2" />
+            <span>WorldInfo</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto text-end">
+                <li class="nav-item">
+                    <a [routerLink]="'/'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                        class="nav-link">
+                        <i class="fa-solid fa-flag me-1"></i> Kraje
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="'/about'" routerLinkActive="active" class="nav-link">
+                        <i class="fa-solid fa-circle-info me-1"></i> O projekcie
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="'/contact'" routerLinkActive="active" class="nav-link">
+                        <i class="fa-solid fa-envelope me-1"></i> Kontakt
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

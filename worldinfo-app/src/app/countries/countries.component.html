@@ -1,0 +1,61 @@
+<div class="countries-wrapper d-flex flex-column flex-md-row h-100 overflow-hidden px-2 px-md-3 pb-2 pb-md-2">
+    <!-- Lewy panel: lista krajów -->
+    <div class="countries-container d-flex flex-column flex-grow-1 mt-2 w-100 h-100" [class.d-none]="selectedCountry"
+        [class.d-md-block]="true" [ngClass]="{
+      'countries-container-shrink': selectedCountry,
+      'd-none d-md-flex': selectedCountry
+    }">
+        <h6 class="countries-header d-flex align-items-center justify-content-between px-3 py-3 mb-3 fs-5">
+            Lista krajów
+        </h6>
+
+        <div *ngIf="hasError" class="text-center p-4 text-danger">
+            Błąd ładowania danych.
+        </div>
+
+        <div *ngIf="!isLoading && !hasError && countries.length === 0" class="text-center p-4">
+            Brak krajów do wyświetlenia.
+        </div>
+
+        <div class="cards-container mb-3" *ngIf="!isLoading && !hasError && countries.length">
+            <div class="country-card d-md-block" *ngFor="let country of countries" (click)="selectCountry(country)">
+                <div class="country-flag ps-2 align-self-center">
+                    <ng-container *ngIf="country.flag; else noFlag">
+                        <div class="flag-image">
+                            <img [src]="country.flag" alt="{{ country.name }}" />
+                        </div>
+                    </ng-container>
+                    <ng-template #noFlag>
+                        <div class="no-flag">
+                            <i class="fa-solid fa-flag"></i>
+                        </div>
+                    </ng-template>
+                </div>
+
+                <div class="country-info">
+                    <div class="country-name">{{ country.name }}</div>
+                    <div class="country-capital">Stolica: {{ country.capital }}</div>
+                </div>
+
+                <div class="country-details-panel ms-3 me-3">
+                    <div class="country-region">
+                        Region: <span class="badge bg-secondary">{{ country.region }}</span>
+                    </div>
+                    <div class="country-population">
+                        Populacja: {{ country.population | number }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---->
+    <!-- Prawy panel szczegółów kraju -->
+    <app-country-details *ngIf="selectedCountry" [country]="selectedCountry" (close)="clearSelectedCountry()"
+        class="country-details-panel d-flex flex-column flex-grow-1 h-100 mb-1 mb-md-3 pb-md-6 pb-4"
+        [class.d-md-block]="true" [ngClass]="{
+      'country-details-hide': !selectedCountry,
+      'd-block d-md-block': selectedCountry,
+      'd-none d-md-block': !selectedCountry
+    }"></app-country-details>
+</div>
