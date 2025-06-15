@@ -5,9 +5,6 @@
       'countries-container-shrink': selectedCountry,
       'd-none d-md-flex': selectedCountry
     }">
-        <h6 class="countries-header d-flex align-items-center justify-content-between px-3 py-3 mb-3 fs-5">
-            Lista krajów
-        </h6>
 
         <div *ngIf="hasError" class="text-center p-4 text-danger">
             Błąd ładowania danych.
@@ -41,16 +38,11 @@
                     <div class="country-region">
                         Region: <span class="badge bg-secondary">{{ country.region }}</span>
                     </div>
-                    <div class="country-population">
-                        Populacja: {{ country.population | number }}
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!---->
-    <!-- Prawy panel szczegółów kraju -->
     <app-country-details *ngIf="selectedCountry" [country]="selectedCountry" (close)="clearSelectedCountry()"
         class="country-details-panel d-flex flex-column flex-grow-1 h-100 mb-1 mb-md-3 pb-md-6 pb-4"
         [class.d-md-block]="true" [ngClass]="{

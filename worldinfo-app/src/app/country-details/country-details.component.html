@@ -1,35 +1,25 @@
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">{{ country.name }}</h4>
-    <button class="btn btn-outline-light btn-sm" (click)="close.emit()">
-        <i class="fa-solid fa-xmark"></i>
-    </button>
+<div class="country-details-panel" [ngClass]="{ 'country-details-hide': !country }">
+    <!-- Nagłówek -->
+    <div class="details-header d-flex justify-content-between align-items-center mb-3">
+        <h5 class="mb-0">{{ country.name }}</h5>
+        <button class="btn btn-outline-light btn-sm" (click)="closePanel()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <!-- Flaga -->
+    <div class="country-flag-container text-center mb-3">
+        <img [src]="country.flag" [alt]="country.name" class="flag-img" />
+    </div>
+
+    <!-- Szczegóły -->
+    <div class="details-body">
+        <div class="detail-item"><span class="label">Stolica:</span> {{ country.capital || 'brak' }}</div>
+        <div class="detail-item"><span class="label">Region:</span> {{ country.region }}</div>
+        <div class="detail-item"><span class="label">Populacja:</span> {{ country.population | number }}</div>
+        <div class="detail-item"><span class="label">Powierzchnia:</span> {{ country.area | number }} km²</div>
+        <div class="detail-item"><span class="label">Waluta:</span> {{ country.currency || 'brak' }}</div>
+        <div class="detail-item"><span class="label">Języki:</span> {{ country.languages?.join(', ') || 'brak' }}</div>
+        <div class="detail-item"><span class="label">Strefa czasowa:</span> {{ country.timezone || 'brak' }}</div>
+    </div>
 </div>
-
-<hr class="border-light opacity-25" />
-
-<div class="mb-3 text-center">
-    <img [src]="country.flag" [alt]="country.name" class="img-fluid rounded shadow-sm" style="max-height: 120px;" />
-</div>
-
-<ul class="list-group list-group-flush text-light">
-    <li class="list-group-item bg-transparent d-flex justify-content-between">
-        <span>Stolica:</span>
-        <strong>{{ country.capital }}</strong>
-    </li>
-    <li class="list-group-item bg-transparent d-flex justify-content-between">
-        <span>Region:</span>
-        <strong>{{ country.region }}</strong>
-    </li>
-    <li class="list-group-item bg-transparent d-flex justify-content-between">
-        <span>Populacja:</span>
-        <strong>{{ country.population | number }}</strong>
-    </li>
-    <li class="list-group-item bg-transparent d-flex justify-content-between">
-        <span>Waluta:</span>
-        <strong>{{ country.currency }}</strong>
-    </li>
-    <li class="list-group-item bg-transparent d-flex justify-content-between" *ngIf="country.languages?.length">
-        <span>Języki:</span>
-        <strong>{{ country.languages.join(', ') }}</strong>
-    </li>
-</ul>

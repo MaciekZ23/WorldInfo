@@ -18,21 +18,12 @@
     flex-grow: 1;
     min-height: 0;
 
-    .countries-header {
-        background-color: #1c1c1d;
-        border-radius: 10px;
-        font-size: 1.2rem;
-        color: #676767;
-        margin-top: 0px;
-        box-shadow: 6px 4px 10px 0px rgba(16, 16, 16, 1);
-    }
-
     .cards-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         grid-gap: 1rem;
         min-height: 0;
-        max-height: calc(100% - 88px);
+        max-height: 100%;
         overflow-y: auto;
         flex-grow: 1;
     }
@@ -43,19 +34,20 @@
 }
 
 .country-card {
-    background-color: #1C1C1D;
-    color: #D7D7D7;
+    background-color: #1c1c1d;
+    color: #d7d7d7;
     border: none;
     border-radius: 10px;
     padding: 0.5rem;
     width: 100%;
     min-width: 245px;
     min-height: 290px;
-    box-shadow: 6px 4px 10px 0px rgba(16, 16, 16, 1);
+    box-shadow: 6px 4px 10px rgba(16, 16, 16, 1);
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     margin: 0 auto;
@@ -72,86 +64,93 @@
         height: auto;
         align-items: center;
         justify-content: space-between;
-        margin-left: 0;
         gap: 4px;
         min-height: 100px;
     }
-}
 
-.country-avatar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    margin-top: 15px;
-
-    @media (max-width: 768px) {
-        margin-bottom: 0;
-        margin-right: 10px;
-        margin-left: 0;
-        margin-top: 0;
-    }
-
-    .avatar {
-        width: 60px;
-        height: 40px;
-        background-color: #F05458;
-        border-radius: 4px;
+    .flag-image {
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 180px;
+        height: 140px;
         overflow: hidden;
+        border-radius: 4px;
+        margin: 0 auto 10px;
 
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
+
+        @media (max-width: 768px) {
+            width: 70px;
+            height: 42px;
+        }
+    }
+
+    .no-flag {
+        width: 100px;
+        height: 60px;
+        background-color: #f05458;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         i {
             color: black;
             font-size: 1.4rem;
         }
-    }
-
-    @media (max-width: 768px) {
-        .avatar {
-            width: 50px;
-            height: 30px;
-        }
-    }
-}
-
-.country-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    margin-left: 10px;
-
-    @media (max-width: 768px) {
-        align-items: flex-start;
-        margin-left: 0;
-    }
-
-    .country-name {
-        font-size: 1.4rem;
-        font-weight: bold;
-        margin-bottom: 0.4rem;
 
         @media (max-width: 768px) {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
+            width: 70px;
+            height: 42px;
         }
     }
 
-    .country-capital {
-        font-size: 1rem;
-        color: #676363;
+    .country-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
 
         @media (max-width: 768px) {
-            font-size: 0.8rem;
+            align-items: flex-start;
+            margin-left: 0;
+        }
+
+        .country-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.4rem;
+
+            @media (max-width: 768px) {
+                font-size: 1.2rem;
+                margin-bottom: 8px;
+            }
+        }
+
+        .country-capital {
+            font-size: 1rem;
+            color: #676363;
+            font-weight: bold;
+
+            @media (max-width: 768px) {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .country-details-panel {
+        font-size: 0.9rem;
+        color: #aaaaaa;
+        margin-top: 8px;
+
+        .country-region {
+            margin-bottom: 0;
         }
     }
 }
