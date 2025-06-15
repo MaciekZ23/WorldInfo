@@ -22,7 +22,6 @@
 
 - Lista krajów w formie interaktywnych kart
 - Szczegóły kraju po kliknięciu (np. stolica, populacja, flaga)
-- Przefiltrowanie listy po nazwie
 - Obsługa routingu bez przeładowania strony
 - Dynamicznie generowany formularz z walidacją
 
