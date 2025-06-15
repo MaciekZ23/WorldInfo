@@ -1,59 +1,23 @@
-# WorldinfoApp
+# WorldinfoApp 🌍
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
+WorldinfoApp to aplikacja stworzona w Angularze, która umożliwia dynamiczne wyświetlanie formularzy kontaktowych oraz prezentację informacji o krajach. Aplikacja jest responsywna, oparta na komponentach standalone i stylowana z wykorzystaniem SCSS oraz zmiennych Bootstrapowych.
 
-## Development server
+---
 
-To start a local development server, run:
+## Technologie
 
-```bash
-ng serve
-```
+- **Angular 17** – szybki framework frontendowy, zapewniający modularność i wydajność.
+- **Bootstrap 5 (SCSS)** – wykorzystany do stylowania interfejsu, z możliwością pełnej personalizacji kolorystyki.
+- **Reactive Forms** – do dynamicznego budowania formularzy z walidacją.
+- **TypeScript** – bezpieczne typowanie i lepsza kontrola struktury kodu.
+- **Font Awesome** – do ikon w UI.
+- **Standalone Components** – nowoczesne podejście do komponentów w Angularze bez potrzeby deklarowania ich w module.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## Funkcjonalności
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Dynamiczny formularz kontaktowy** wyświetlany w modalnym oknie (zabezpieczony przed przypadkowym zamknięciem).
+- **Walidacja pól** – imię i nazwisko, e-mail, temat, wiadomość oraz zgoda na przetwarzanie danych.
+- **Obsługa formularzy za pomocą konfiguracji (`FormField[]`)** – możesz łatwo dodać lub usunąć pole.
+- **Stylizacja SCSS + Bootstrap** – zdefiniowane kolory i klasy dla spójnego UI.
