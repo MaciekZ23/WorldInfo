@@ -1,17 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-export interface Country {
-  name: string;
-  capital: string;
-  flag: string;
-  region: string;
-  population: number;
-  area?: number;
-  currency?: string;
-  languages?: string[];
-  timezone?: string;
-}
+import { Country } from '../models/country.model';
 
 @Component({
   selector: 'app-country-details',

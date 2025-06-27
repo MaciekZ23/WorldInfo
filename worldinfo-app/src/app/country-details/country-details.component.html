@@ -1,9 +1,8 @@
-<div class="country-details-panel" [ngClass]="{ 'country-details-hide': !country }">
+<div *ngIf="country" class="country-details-panel" [ngClass]="{ 'country-details-hide': !country }">
     <!-- Nagłówek -->
     <div class="details-header d-flex justify-content-between align-items-center mb-3">
         <h5 class="mb-0">{{ country.name }}</h5>
-        <button class="btn btn-outline-light btn-sm" (click)="closePanel()">
-            <i class="fa-solid fa-xmark"></i>
+        <button class="btn-close btn-close-white btn-sm" (click)="closePanel()">
         </button>
     </div>
 

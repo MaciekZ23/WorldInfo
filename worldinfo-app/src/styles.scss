@@ -1,6 +1,20 @@
 /* 1. Import funkcji Bootstrap */
 @import "../node_modules/bootstrap/scss/functions";
 
+html, body {
+  height: 100%;
+  overflow: hidden; // kluczowe — scroll ma być tylko w komponentach
+  margin: 0;
+  padding: 0;
+}
+
+app-root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
 /* 2. Kolory główne */
 $primary: #00C853; // Zielony główny (np. logo, przyciski)
 $secondary: #2E7D32; // Głęboka zieleń (np. navbar)

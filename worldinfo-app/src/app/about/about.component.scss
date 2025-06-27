@@ -24,3 +24,12 @@
         font-size: 1rem;
     }
 }
+
+@media (max-width: 768px) {
+  .container {
+    position: relative;
+    height: calc(100vh - 70px); // zakładamy navbar ma 56px
+    overflow-y: auto;
+    padding-bottom: 3rem; // żeby ostatni tekst nie był ucięty
+  }
+}

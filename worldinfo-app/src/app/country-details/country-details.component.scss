@@ -1,77 +1,83 @@
 .country-details-panel {
-    width: 600px;
-    height: calc(100vh - 85px);
-    background-color: #1C1C1D;
-    color: #FFFFFF;
-    position: absolute;
+  width: 600px;
+  height: calc(100vh - 85px);
+  background-color: #1c1c1d;
+  color: #ffffff;
+  position: absolute;
+  top: 8px;
+  right: 1rem;
+  z-index: 100;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 6px 4px 10px rgba(16, 16, 16, 1);
+  overflow-y: auto;
+  transition: right 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    width: 100% !important;
+    height: 100vh;
+    right: 0;
     top: 8px;
-    right: 1rem;
-    z-index: 100;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 6px 4px 10px rgba(16, 16, 16, 1);
-    overflow-y: auto;
-    transition: right 0.4s ease-in-out, opacity 0.4s ease-in-out;
-    opacity: 1;
+    margin: 0;
+    border-radius: 0;
+    padding: 16px;
+    position: relative;
+  }
+
+  .details-header {
+    border-bottom: 1px solid #444;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+
+    h5 {
+      font-weight: bold;
+    }
+
+    .button {
+      background: none;
+      border: none;
+      color: #676767;
+      //font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+  }
+
+  .country-flag-container {
+    img.flag-img {
+      max-width: 100%;
+      max-height: 120px;
+      object-fit: contain;
+      border-radius: 4px;
+      background-color: #fff;
+    }
+  }
+
+  .details-body {
     display: flex;
     flex-direction: column;
+    gap: 0.75rem;
 
-    @media (max-width: 768px) {
-        width: 100% !important;
-        height: calc(100vh - 85px);
-        right: 0;
-        top: 0;
-        margin: 0;
-        border-radius: 0;
-        padding: 16px;
+    .detail-item {
+      font-size: 1rem;
+
+      .label {
+        font-weight: 500;
+        color: #a5d6a7;
+        margin-right: 8px;
+      }
     }
-
-    .details-header {
-        border-bottom: 1px solid #444;
-        padding-bottom: 8px;
-        margin-bottom: 16px;
-
-        h5 {
-            font-weight: bold;
-        }
-
-        button {
-            color: #fff;
-        }
-    }
-
-    .country-flag-container {
-        img.flag-img {
-            max-width: 100%;
-            max-height: 120px;
-            object-fit: contain;
-            border-radius: 4px;
-            background-color: #fff;
-        }
-    }
-
-    .details-body {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-
-        .detail-item {
-            font-size: 1rem;
-
-            .label {
-                font-weight: 500;
-                color: #a5d6a7;
-                margin-right: 8px;
-            }
-        }
-    }
+  }
 }
 
 .country-details-hide {
-    right: -600px;
-    opacity: 0;
+  right: -600px;
+  opacity: 0;
 
-    @media (max-width: 768px) {
-        right: -100%;
-    }
+  @media (max-width: 768px) {
+    right: -100%;
+  }
 }

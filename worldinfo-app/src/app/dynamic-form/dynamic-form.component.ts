@@ -1,5 +1,18 @@
-import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormField } from '../models/form-field.model';
 
@@ -10,9 +23,8 @@ declare const bootstrap: any;
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './dynamic-form.component.html',
-  styleUrls: ['./dynamic-form.component.scss']
+  styleUrls: ['./dynamic-form.component.scss'],
 })
-
 export class DynamicFormComponent implements OnInit, OnChanges {
   @Input() fields: FormField[] = [];
   @Input() formTitle: string = '';
@@ -35,12 +47,21 @@ export class DynamicFormComponent implements OnInit, OnChanges {
 
   private buildForm(): void {
     const group: any = {};
-    this.fields.forEach(field => {
+    this.fields.forEach((field) => {
       const validators = [];
-      if (field.required) validators.push(Validators.required);
+
+      if (field.required) {
+        if (field.type === 'checkbox') {
+          validators.push(Validators.requiredTrue); // Wymaga zaznaczenia checkboxa
+        } else {
+          validators.push(Validators.required);
+        }
+      }
+
       if (field.type === 'email') validators.push(Validators.email);
 
-      const defaultValue = field.type === 'checkbox' ? false : field.value || '';
+      const defaultValue =
+        field.type === 'checkbox' ? false : field.value || '';
       group[field.name] = new FormControl(defaultValue, validators);
     });
     this.form = new FormGroup(group);
@@ -48,9 +69,9 @@ export class DynamicFormComponent implements OnInit, OnChanges {
 
   onSubmit(): void {
     if (this.form.valid) {
-      const updatedFields = this.fields.map(field => ({
+      const updatedFields = this.fields.map((field) => ({
         ...field,
-        value: this.form.get(field.name)?.value
+        value: this.form.get(field.name)?.value,
       }));
 
       this.formSubmitted.emit(updatedFields);
@@ -67,7 +88,7 @@ export class DynamicFormComponent implements OnInit, OnChanges {
 
   private resetForm(): void {
     const resetValues: any = {};
-    this.fields.forEach(field => {
+    this.fields.forEach((field) => {
       resetValues[field.name] = field.type === 'checkbox' ? false : '';
     });
     this.form.reset(resetValues);
@@ -78,7 +99,7 @@ export class DynamicFormComponent implements OnInit, OnChanges {
     if (modalElement) {
       const modal = new bootstrap.Modal(modalElement, {
         backdrop: 'static',
-        keyboard: false
+        keyboard: false,
       });
       modal.show();
     }

@@ -1,156 +1,154 @@
 .countries-wrapper {
-    display: flex;
-    align-items: stretch;
-    gap: 0px;
-    height: calc(100vh - 15px);
-    overflow: hidden;
-    position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 0px;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+  position: relative;
 }
 
 .countries-container {
-    height: 100%;
-    max-width: 100%;
-    background-color: transparent;
-    border-radius: 10px;
-    transition: max-width 0.3s ease, margin-left 0.3s ease, margin-right 0.3s ease;
-    flex-direction: column;
-    display: flex;
-    flex-grow: 1;
-    min-height: 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0; // to pozwala scrollować dziecko
+  overflow: hidden;
+  height: 100%;
 
-    .cards-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-gap: 1rem;
-        min-height: 0;
-        max-height: 100%;
-        overflow-y: auto;
-        flex-grow: 1;
-    }
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 6px;
+    min-height: 0;
+    max-height: calc(100vh - 86px);
+  }
 }
 
 .countries-container-shrink {
-    margin-right: 612px;
+  margin-right: 612px;
 }
 
 .country-card {
-    background-color: #1c1c1d;
-    color: #d7d7d7;
-    border: none;
-    border-radius: 10px;
-    padding: 0.5rem;
-    width: 100%;
-    min-width: 245px;
-    min-height: 290px;
-    box-shadow: 6px 4px 10px rgba(16, 16, 16, 1);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    margin: 0 auto;
-    position: relative;
+  background-color: #1c1c1d;
+  color: #d7d7d7;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem;
+  width: 100%;
+  min-width: 245px;
+  min-height: 340px;
+  //box-shadow: 6px 4px 10px rgba(16, 16, 16, 1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin: 0 auto;
+  position: relative;
 
-    &:hover {
-        filter: brightness(130%);
+  &:hover {
+    filter: brightness(130%);
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    text-align: left;
+    padding: 10px;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    min-height: 100px;
+  }
+
+  .flag-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 140px;
+    overflow: hidden;
+    border-radius: 4px;
+    margin: 0 auto 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     @media (max-width: 768px) {
-        flex-direction: row;
-        text-align: left;
-        padding: 10px;
-        height: auto;
-        align-items: center;
-        justify-content: space-between;
-        gap: 4px;
-        min-height: 100px;
+      width: 70px;
+      height: 42px;
+    }
+  }
+
+  .no-flag {
+    width: 100px;
+    height: 60px;
+    background-color: #f05458;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      color: black;
+      font-size: 1.4rem;
     }
 
-    .flag-image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 180px;
-        height: 140px;
-        overflow: hidden;
-        border-radius: 4px;
-        margin: 0 auto 10px;
+    @media (max-width: 768px) {
+      width: 70px;
+      height: 42px;
+    }
+  }
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+  .country-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
 
-        @media (max-width: 768px) {
-            width: 70px;
-            height: 42px;
-        }
+    @media (max-width: 768px) {
+      align-items: flex-start;
+      margin-left: 0;
     }
 
-    .no-flag {
-        width: 100px;
-        height: 60px;
-        background-color: #f05458;
-        border-radius: 4px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .country-name {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 0.4rem;
 
-        i {
-            color: black;
-            font-size: 1.4rem;
-        }
-
-        @media (max-width: 768px) {
-            width: 70px;
-            height: 42px;
-        }
+      @media (max-width: 768px) {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
     }
 
-    .country-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        flex-grow: 1;
+    .country-capital {
+      font-size: 1rem;
+      color: #676363;
+      font-weight: bold;
 
-        @media (max-width: 768px) {
-            align-items: flex-start;
-            margin-left: 0;
-        }
-
-        .country-name {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 0.4rem;
-
-            @media (max-width: 768px) {
-                font-size: 1.2rem;
-                margin-bottom: 8px;
-            }
-        }
-
-        .country-capital {
-            font-size: 1rem;
-            color: #676363;
-            font-weight: bold;
-
-            @media (max-width: 768px) {
-                font-size: 0.8rem;
-            }
-        }
+      @media (max-width: 768px) {
+        font-size: 0.8rem;
+      }
     }
+  }
 
-    .country-details-panel {
-        font-size: 0.9rem;
-        color: #aaaaaa;
-        margin-top: 8px;
+  .country-details-panel {
+    font-size: 0.9rem;
+    color: #aaaaaa;
+    margin-top: 8px;
 
-        .country-region {
-            margin-bottom: 0;
-        }
+    .country-region {
+      margin-bottom: 0;
     }
+  }
 }
