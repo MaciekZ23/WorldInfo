@@ -1,13 +1,33 @@
+## LIVE PREVIEW
+
+**Zobacz aplikację online:** [https://maciekz23.github.io/WorldInfo/countries](https://maciekz23.github.io/WorldInfo/countries)
+
 # WorldInfoApp 🌍
 
 **WorldInfoApp** to jednostronicowa aplikacja (SPA) napisana w Angularze, która umożliwia szybkie przeglądanie informacji o krajach świata, wyświetlanie ich szczegółów po kliknięciu kraju na mapie oraz wysyłanie wiadomości przez formularz kontaktowy z walidacją. Projekt został zbudowany z użyciem nowoczesnych technologii frontendowych z wykorzystaniem komponentów standalone.
 
-## LIVE PREVIEW
+## Opis aplikacji
 
-Aplikacja dostępna pod adresem:
+WorldInfoApp to przeglądarka krajów świata. 
+Użytkownik może:
+- przeglądać kraje w formie kart z flagą, nazwą, stolicą i regionem,
+- wyszukiwać szczegóły kraju (populacja, powierzchnia, waluta, języki, strefa czasowa ) klikając na kartę lub na kraj na interaktywnej mapie,
+- korzystać z formularza kontaktowego z walidacją,
+- nawigować bez przeładowań strony dzięki zastosowanemu routingowi,
+- korzystać z aplikacji na różnych urządzeniach dzięki responsywnemu designowi.
 
-[https://maciekz23.github.io/WorldInfo/countries](https://maciekz23.github.io/WorldInfo/countries)
+Aplikacja składa się z czterech zakładek, z których każda odpowiada za określoną funkcjonalność:
 
+- Kraje – lista krajów w formie kart z flagą, nazwą, stolicą i regionem. Kliknięcie na kartę przenosi do szczegółów kraju.
+
+- Mapa – interaktywna mapa świata (Leaflet). Kliknięcie na kraj przenosi do jego szczegółów.
+
+- O projekcie – informacje o zastosowanych technologiach, źródłach danych i funkcjonalnościach aplikacji.
+
+- Kontakt – formularz kontaktowy z walidacją (wymagane pola, poprawny email, zgoda na przetwarzanie danych).
+
+
+Aplikacja jest napisana w Angular 15+ z TypeScript.
 
 ## TECHNOLOGIE
 
