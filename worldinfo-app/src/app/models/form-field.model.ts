@@ -50,13 +50,13 @@ export interface SelectFormField extends BaseFormField {
 
 export interface TimeFormField extends BaseFormField {
     type: 'time';
-    min?: string; // HH:mm
+    min?: string;
     max?: string;
 }
 
 export interface DateTimeFormField extends BaseFormField {
     type: 'datetime';
-    min?: string; // YYYY-MM-DDTHH:mm
+    min?: string; 
     max?: string;
 }
 

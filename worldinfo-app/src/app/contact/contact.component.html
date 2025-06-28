@@ -7,12 +7,10 @@
         Masz pytania lub chcesz się z nami skontaktować? Wypełnij poniższy formularz.
     </p>
 
-    <!-- Przycisk otwierający formularz -->
     <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModalKontakt">
         Skontaktuj się z nami
     </button>
 
-    <!-- Dynamiczny formularz -->
     <app-dynamic-form [fields]="contactFields" [formTitle]="'Formularz kontaktowy'" [isOpen]="true"
         (formSubmitted)="onFormSubmit($event)" (close)="onCloseForm()"></app-dynamic-form>
 </div>

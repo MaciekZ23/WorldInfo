@@ -1,17 +1,14 @@
 <div *ngIf="country" class="country-details-panel" [ngClass]="{ 'country-details-hide': !country }">
-    <!-- Nagłówek -->
     <div class="details-header d-flex justify-content-between align-items-center mb-3">
         <h5 class="mb-0">{{ country.name }}</h5>
         <button class="btn-close btn-close-white btn-sm" (click)="closePanel()">
         </button>
     </div>
 
-    <!-- Flaga -->
     <div class="country-flag-container text-center mb-3">
         <img [src]="country.flag" [alt]="country.name" class="flag-img" />
     </div>
 
-    <!-- Szczegóły -->
     <div class="details-body">
         <div class="detail-item"><span class="label">Stolica:</span> {{ country.capital || 'brak' }}</div>
         <div class="detail-item"><span class="label">Region:</span> {{ country.region }}</div>
