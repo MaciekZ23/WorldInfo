@@ -1,35 +1,35 @@
 .container {
+  color: #000000;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+  }
+
+  h2,
+  h4 {
     color: #000000;
+  }
 
-    a {
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-
-    ul {
-        list-style-type: disc;
-        margin-left: 1.5rem;
-    }
-
-    h2,
-    h4 {
-        color: #000000;
-    }
-
-    p,
-    li {
-        font-size: 1rem;
-    }
+  p,
+  li {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
   .container {
     position: relative;
-    height: calc(100vh - 70px); // zakładamy navbar ma 56px
+    height: calc(100vh - 90px);
     overflow-y: auto;
-    padding-bottom: 3rem; // żeby ostatni tekst nie był ucięty
+    padding-bottom: 4rem;
   }
 }

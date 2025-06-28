@@ -2,6 +2,12 @@
 
 **WorldInfoApp** to jednostronicowa aplikacja (SPA) napisana w Angularze, która umożliwia szybkie przeglądanie informacji o krajach świata, wyświetlanie ich szczegółów po kliknięciu kraju na mapie oraz wysyłanie wiadomości przez formularz kontaktowy z walidacją. Projekt został zbudowany z użyciem nowoczesnych technologii frontendowych z wykorzystaniem komponentów standalone.
 
+## LIVE PREVIEW
+
+Aplikacja dostępna pod adresem:
+
+[https://maciekz23.github.io/WorldInfo/countries](https://maciekz23.github.io/WorldInfo/countries)
+
 
 ## TECHNOLOGIE
 

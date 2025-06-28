@@ -12,5 +12,5 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'map', component: MapComponent },
-  { path: '', redirectTo: 'countries', pathMatch: 'full' }
+  { path: '', redirectTo: 'countries', pathMatch: 'full' },
 ];
