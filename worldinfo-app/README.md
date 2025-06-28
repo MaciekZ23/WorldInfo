@@ -1,36 +1,71 @@
-# WorldinfoApp 🌍
+# WorldInfoApp 🌍
 
-**WorldinfoApp** to jednostronicowa aplikacja (SPA) napisana w Angularze, która umożliwia szybkie przeglądanie i wyszukiwanie informacji o krajach świata oraz udostępnia formularz kontaktowy z walidacją. Projekt został stworzony z użyciem nowoczesnych technologii frontendowych i oparty o komponenty standalone.
+**WorldInfoApp** to jednostronicowa aplikacja (SPA) napisana w Angularze, która umożliwia szybkie przeglądanie informacji o krajach świata, wyświetlanie ich szczegółów po kliknięciu kraju na mapie oraz wysyłanie wiadomości przez formularz kontaktowy z walidacją. Projekt został zbudowany z użyciem nowoczesnych technologii frontendowych z wykorzystaniem komponentów standalone.
 
----
 
-## Technologie
+## TECHNOLOGIE
 
-| Technologia            | Zastosowanie                                 |
-|------------------------|----------------------------------------------|
-| **Angular 15+**        | Główna struktura aplikacji (Standalone Components) |
-| **REST Countries API** | Dostarczanie informacji o krajach (https://restcountries.com) |
-| **Bootstrap 5**        | Stylowanie, grid, komponenty UI |
-| **Font Awesome**       | Ikony w interfejsie |
-| **SCSS**               | Personalizowane style z wykorzystaniem zmiennych |
-| **TypeScript**         | Typowanie danych i logika formularzy |
-| **Reactive Forms**     | Obsługa dynamicznych formularzy z walidacją |
+| Technologia              | Zastosowanie                                           |
+|--------------------------|--------------------------------------------------------|
+| **Angular 15+ (Standalone)** | Główna struktura aplikacji, komponenty bez modułów |
+| **TypeScript**           | Silne typowanie i lepsza jakość kodu                   |
+| **REST Countries API**    | Źródło danych o krajach                               |
+| **Bootstrap 5**           | Stylowanie, układ, responsywność                       |
+| **Font Awesome**          | Ikony w interfejsie użytkownika                        |
+| **SCSS**                  | Rozszerzone style z wykorzystaniem zmiennych           |
+| **Leaflet**               | Interaktywna mapa świata                               |
+| **Reactive Forms**        | Dynamiczne formularze z walidacją                      |
+| **Jasmine + Karma**       | Testy jednostkowe                                      |
 
----
 
-## Funkcjonalności
+## FUNKCJONALNOŚCI
 
-- Lista krajów w formie interaktywnych kart
-- Szczegóły kraju po kliknięciu (np. stolica, populacja, flaga)
-- Obsługa routingu bez przeładowania strony
-- Dynamicznie generowany formularz z walidacją
+- Lista krajów w formie kart (flaga, nazwa, stolica, region)
 
----
+- Szczegóły kraju po kliknięciu (populacja, powierzchnia, waluta, języki)
 
-## Źródła danych
+- Interaktywna mapa (kliknięcie w kraj przenosi do jego szczegółów)
 
-Dane o krajach pochodzą z oficjalnego i darmowego API:
+- Dynamiczny formularz kontaktowy z walidacją (wymagane pola, email, zgoda)
 
-🔗 **https://restcountries.com/v3.1/all**
+- Routing bez przeładowania strony
 
----
+- Responsywność na urządzeniach mobilnych i desktop
+
+- Testy jednostkowe
+
+
+## ŹRÓDŁA DANYCH
+
+Dane pochodzą z otwartego API:
+
+[https://restcountries.com/v3.1/all](https://restcountries.com/v3.1/all)
+
+
+## INSTRUKCJA URUCHOMIENIA
+
+### Klonowanie repozytorium
+
+```bash
+git clone https://github.com/MaciekZ23/WorldInfo.git
+cd worldinfo-app
+```
+
+### Instalacja zależności
+```bash
+Skopiuj kod
+npm install
+```
+
+### Uruchomienie aplikacji
+```bash
+Skopiuj kod
+ng serve
+Aplikacja będzie dostępna pod adresem: http://localhost:4200/countries
+```
+
+### Uruchamianie testów
+```bash
+Skopiuj kod
+ng test
+```
