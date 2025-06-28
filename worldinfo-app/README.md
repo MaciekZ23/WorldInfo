@@ -53,19 +53,16 @@ cd worldinfo-app
 
 ### Instalacja zależności
 ```bash
-Skopiuj kod
 npm install
 ```
 
 ### Uruchomienie aplikacji
 ```bash
-Skopiuj kod
 ng serve
-Aplikacja będzie dostępna pod adresem: http://localhost:4200/countries
+npm run startMobile
 ```
 
 ### Uruchamianie testów
 ```bash
-Skopiuj kod
 ng test
 ```
